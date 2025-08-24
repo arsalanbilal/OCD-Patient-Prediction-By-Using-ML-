@@ -44,7 +44,7 @@ def load_data():
 @st.cache_resource
 def load_model():
     try:
-        with open('ocd_model.pkl', 'rb') as file:
+        with open('best_svc_model.joblib', 'rb') as file:
             model = pickle.load(file)
         return model
     except:
