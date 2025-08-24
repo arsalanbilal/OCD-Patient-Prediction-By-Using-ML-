@@ -24,13 +24,13 @@ with st.sidebar:
 
     # Categorical inputs (placeholders – replace with actual dataset values later)
     gender = st.selectbox("Gender", ["Male", "Female", "Other"])
-    ethnicity = st.selectbox("Ethnicity", ["Option1", "Option2", "Option3"])
+    ethnicity = st.selectbox("Ethnicity", ["African", "Hispanic", "Caucasian", "Asian"])
     marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced", "Widowed"])
     education = st.selectbox("Education Level", ["High School", "Graduate", "Post-Graduate", "Other"])
     prev_diag = st.selectbox("Previous Diagnoses", ["Yes", "No"])
     family_history = st.selectbox("Family History of OCD", ["Yes", "No"])
-    obsession_type = st.selectbox("Obsession Type", ["Option1", "Option2", "Option3"])
-    compulsion_type = st.selectbox("Compulsion Type", ["Option1", "Option2", "Option3"])
+    obsession_type = st.selectbox("Obsession Type", ["Harm-related", "Contamination", "Symmetry", "Hoarding", "Religious"])
+    compulsion_type = st.selectbox("Compulsion Type", ["Checking", "Washing", "Ordering", "Praying", "Counting"])
     depression = st.selectbox("Depression Diagnosis", ["Yes", "No"])
     anxiety = st.selectbox("Anxiety Diagnosis", ["Yes", "No"])
 
