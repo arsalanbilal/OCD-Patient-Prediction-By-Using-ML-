@@ -37,7 +37,7 @@ options = st.sidebar.radio("Select a page:",
 
 
 # LOad model 
-loaded_model = best_svc_model.joblib
+loaded_model = (best_svc_model.joblib)
 
 
 
