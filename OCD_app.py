@@ -35,25 +35,12 @@ st.sidebar.title("Navigation")
 options = st.sidebar.radio("Select a page:", 
                            ["Home", "Data Exploration", "Make Prediction", "About"])
 
-# Load data and model
-@st.cache_data
-def load_data():
-    data = pd.read_csv('OCD Patient Dataset.csv')
-    return data
 
-@st.cache_resource
-def load_model():
-    try:
-        with open('best_svc_model.joblib', 'rb') as file:
-            model = pickle.load(file)
-        return model
-    except:
-        st.error("Model file not found. Please ensure 'ocd_model.pkl' is in the same directory.")
-        return None
+# LOad model 
+loaded_model = best_svc_model.joblib
 
-# Load data and model
-df = load_data()
-model = load_model()
+
+
 
 if options == "Home":
     st.markdown('<p class="section-header">Dataset Overview</p>', unsafe_allow_html=True)
@@ -218,8 +205,8 @@ elif options == "Make Prediction":
             input_df = input_df[model_columns]
             
             # Make prediction
-            prediction = model.predict(input_df)
-            prediction_proba = model.predict_proba(input_df)
+            prediction = loaded_model.predict(input_df)
+            prediction_proba = loaded_model.predict_proba(input_df)
             
             # Display results
             st.markdown('<div class="prediction-box">', unsafe_allow_html=True)
